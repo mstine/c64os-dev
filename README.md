@@ -1,5 +1,14 @@
 # c64os-dev
+
 Headers and Includes for C64 OS development using TMPx. 
+
+## Conventional Filename Extensions
+
+| Extension | CBM File Type | Notes                                                |
+|-----------|---------------|------------------------------------------------------|
+| .h        | SEQ           | TMP assembly header file (sequential text)           |
+| .s        | SEQ           | TMP assembly include for constants (sequential text) |
+| .t        | SEQ           | Human readable text file (PETSCII text)              |
 
 ## RE: mstine/c64os-dev FORK
 
