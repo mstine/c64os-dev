@@ -1,7 +1,7 @@
 //---------------------------------------
 // 3x3 Characters - Missing App Icon
 
-missing  .byte $3f,$40,$80,$83
+missing: .byte $3f,$40,$80,$83
          .byte $84,$88,$88,$88
          .byte $ff,$00,$00,$ff
          .byte $00,$00,$00,$3c
@@ -21,4 +21,3 @@ missing  .byte $3f,$40,$80,$83
          .byte $3c,$00,$00,$ff
          .byte $01,$01,$01,$01
          .byte $01,$01,$02,$fc
-

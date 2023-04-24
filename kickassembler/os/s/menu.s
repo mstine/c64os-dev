@@ -1,47 +1,46 @@
 //----[ menu.s ]-------------------------
 
-mnuicon  = $f2 //Hamburger menu, rvs'd
-mnulayer = 3   //Highest of 4
+.label mnuicon  = $f2 //Hamburger menu, rvs'd
+.label mnulayer = 3   //Highest of 4
 
-tptr     = $50 //Text/Temp Pointer
-lptr     = $52 //LastSib/Line Pointer
-cptr     = $26 //ColorLine Pointer
+.label tptr     = $50 //Text/Temp Pointer
+.label lptr     = $52 //LastSib/Line Pointer
+.label cptr     = $26 //ColorLine Pointer
 
-rootpg   = $0382 //Menu Structure Root Pg
-defpg    = $0383 //Menu Def's Root Page
-defpgcnt = $0384 //Menu Def's Page Count
-umdefpg  = $0385 //Util Def's Root Page
-umdefpgc = $0386 //Util Def's Page Count
+.label rootpg   = $0382 //Menu Structure Root Pg
+.label defpg    = $0383 //Menu Def's Root Page
+.label defpgcnt = $0384 //Menu Def's Page Count
+.label umdefpg  = $0385 //Util Def's Root Page
+.label umdefpgc = $0386 //Util Def's Page Count
 
-timutil  = $08cd //17 bytes
-memutil  = $08de //17 bytes
+.label timutil  = $08cd //17 bytes
+.label memutil  = $08de //17 bytes
 
-statmode = $08ef
+.label statmode = $08ef
 
 //Status Modes
-stat_drv = 0 //Drive Status
-stat_app = 1 //Application Custom
-stat_fil = 2 //Path to Open File
+.label stat_drv = 0 //Drive Status
+.label stat_app = 1 //Application Custom
+.label stat_fil = 2 //Path to Open File
 
 //struct
-nextptr  = 0 //2 bytes
-childptr = 2 //2 bytes
-titleptr = 4 //2 bytes
-codeptr  = 6 //2 bytes
-entrysize = 8
+.label nextptr  = 0 //2 bytes
+.label childptr = 2 //2 bytes
+.label titleptr = 4 //2 bytes
+.label codeptr  = 6 //2 bytes
+.label entrysize = 8
 //menuentry
 
 //struct
-awidth   = 0 //1 byte
-petvalue = 1 //1 byte
-actcode  = 2 //1 byte
-modkeys  = 3 //1 byte
-actionsize = 4
+.label awidth   = 0 //1 byte
+.label petvalue = 1 //1 byte
+.label actcode  = 2 //1 byte
+.label modkeys  = 3 //1 byte
+.label actionsize = 4
 //actioncode
 
 //struct
-hwidth   = 0  //1 byte
-hopen    = 1  //1 byte
-headersize = 2
+.label hwidth   = 0  //1 byte
+.label hopen    = 1  //1 byte
+.label headersize = 2
 //headercode
-

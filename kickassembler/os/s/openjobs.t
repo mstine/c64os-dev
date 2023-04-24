@@ -6,8 +6,8 @@
 
 //OpenJob Struct
 
-oj_type  = 0 //4 Job Type Code
-oj_vcb   = 4 //2 Validation Callback
+.label oj_type  = 0 //4 Job Type Code
+.label oj_vcb   = 4 //2 Validation Callback
 
 //OpenJob size = 6
 

@@ -1,180 +1,182 @@
+#import "../h/toolkit.h"
+#import "../h/modules.h"
+
 //----[ pointer.s ]----------------------
 
-rdxy     .macro //Reads Ptr into X/Y
-         ldx \1
-         ldy \1+1
-         .endm
+.macro rdxy(ptr) { //Reads Ptr into X/Y
+    ldx ptr
+    ldy ptr+1
+}
 
-ldxy     .macro //Loads X/Y with address
-         ldx #<\1
-         ldy #>\1
-         .endm
+.macro ldxy(address) { //Loads X/Y with address
+    ldx #<address
+    ldy #>address
+}
 
-stxy     .macro
-         stx \1
-         sty \1+1
-         .endm
+.macro stxy(address) {
+    stx address
+    sty address+1
+}
 
 //---------------------------------------
 //Get and Set RegPtr from Store
 
-storeset .macro //store,index
-         stx \1+(\2*2)
-         sty \1+(\2*2)+1
-         .endm
+.macro storeset(store, index) {
+    stx store+(index*2)
+    sty store+(index*2)+1
+}
 
-storeget .macro //store,index
-         ldx \1+(\2*2)
-         ldy \1+(\2*2)+1
-         .endm
+.macro storeget(store, index) {
+    ldx store+(index*2)
+    ldy store+(index*2)+1
+}
 
 //---------------------------------------
 //Toolkit Helpers
 
-classmethod .macro //method_offset
-         jsr setclass_+stkt
-         ldy #\1
-         jsr getmethod_+stkt
-         .endm
+.macro classmethod(method_offset) {
+    jsr setclass_+stkt
+    ldy #method_offset
+    jsr getmethod_+stkt
+}
 
-supermethod .macro //method_offset
-         jsr setsuper_+stkt
-         ldy #\1
-         jsr getmethod_+stkt
-         .endm
+.macro supermethod(method_offset) {
+    jsr setsuper_+stkt
+    ldy #method_offset
+    jsr getmethod_+stkt
+}
 
 //---------------------------------------
 //Flag Manipulation
 
-setflag  .macro //ptr,index,flags
-         ldy #\2
-         lda (\1),y
-         ora #\3
-         sta (\1),y
-         .endm
+.macro setflag(ptr, index, flags) {
+    ldy #index
+    lda (ptr),y
+    ora #flags
+    sta (ptr),y
+}
 
-clrflag  .macro //ptr,index,flags
-         ldy #\2
-         lda (\1),y
-         and #\3:$ff
-         sta (\1),y
-         .endm
+.macro clrflag(ptr, index, flags) {
+    ldy #index
+    lda (ptr),y
+    and #flags^$ff
+    sta (ptr),y
+}
 
-togflag  .macro //ptr,index,flags
-         ldy #\2
-         lda (\1),y
-         eor #\3
-         sta (\1),y
-         .endm
+.macro togflag(ptr, index, flags) {
+    ldy #index
+    lda (ptr),y
+    eor #flags
+    sta (ptr),y
+}
 
 //---------------------------------------
 //Setters and Getters
 
-setobj8  .macro //ptr,offset,int8
-         ldy #\2
-         lda #\3
-         sta (\1),y
-         .endm
+.macro setobj8(ptr, offset, int8) {
+    ldy #offset
+    lda #int8
+    sta (ptr),y
+}
 
-setobj16 .macro //ptr,offset,int16
-         ldy #\2
-         lda #<\3
-         sta (\1),y
-         iny
-         lda #>\3
-         sta (\1),y
-         .endm
+.macro setobj16(ptr, offset, int16) {
+    ldy #offset
+    lda #<int16
+    sta (ptr),y
+    iny
+    lda #>int16
+    sta (ptr),y
+}
 
-setobjptr .macro //ptr,offset,ptr
-         ldy #\2
-         lda \3
-         sta (\1),y
-         iny
-         lda \3+1
-         sta (\1),y
-         .endm
+.macro setobjptr(ptr, offset, argPtr) {
+    ldy #offset
+    lda argPtr
+    sta (ptr),y
+    iny
+    lda argPtr+1
+    sta (ptr),y
+}
 
-setobjxy .macro //ptr,offset,(RegWrd)
-         tya
-         ldy #\2+1
-         sta (\1),y
-         dey
-         txa
-         sta (\1),y
-         .endm
+.macro setobjxy(ptr, offset) { // +(RegWrd)
+    tya
+    ldy #offset+1
+    sta (ptr),y
+    dey
+    txa
+    sta (ptr),y
+}
 
-rdobj16  .macro //ptr,offset
-         //RegPtr <- property
-         ldy #\2
-         lda (\1),y
-         tax
-         iny
-         lda (\1),y
-         tay
-         .endm
+.macro rdobj16(ptr, offset) {
+    //RegPtr <- property
+    ldy #offset
+    lda (ptr),y
+    tax
+    iny
+    lda (ptr),y
+    tay
+}
 
-getobj16 .macro //ptr,offset,to
-         //A <- property hi byte
-         ldy #\2+1  //offset hi byte
-         lda (\1),y
-         pha
-         dey        //offset lo byte
-         lda (\1),y
-         sta \3     //Save lo byte
-         pla
-         sta \3+1   //Save hi byte
-         .endm
-
-//---------------------------------------
-
-pushxy   .macro
-         tya //Hi
-         pha
-         txa //Lo
-         pha
-         .endm
-
-pullxy   .macro
-         pla
-         tax //Lo
-         pla
-         tay //Hi
-         .endm
-
-push16   .macro //word to put on stack
-         lda #>\1 //Hi
-         pha
-         lda #<\1 //Lo
-         pha
-         .endm
-
-pushptr  .macro //ptr to put on stack
-         lda \1+1 //Hi
-         pha
-         lda \1   //Lo
-         pha
-         .endm
-
-pull16   .macro //ptr to pull from stack
-         pla
-         sta \1   //Lo
-         pla
-         sta \1+1 //Hi
-         .endm
+.macro getobj16(ptr, offset, to) {
+    //A <- property hi byte
+    ldy #offset+1  //offset hi byte
+    lda (ptr),y
+    pha
+    dey        //offset lo byte
+    lda (ptr),y
+    sta to     //Save lo byte
+    pla
+    sta to+1   //Save hi byte
+}
 
 //---------------------------------------
 
-copy16   .macro //word,dest
-         lda #<\1
-         sta \2   //1st: lo byte
-         lda #>\1
-         sta \2+1 //2nd: hi byte
-         .endm
+.macro pushxy() {
+    tya //Hi
+    pha
+    txa //Lo
+    pha
+}
 
-copyptr  .macro //ptr,dest
-         lda \1
-         sta \2   //1st: lo byte
-         lda \1+1
-         sta \2+1 //2nd: hi byte
-         .endm
+.macro pullxy() {
+    pla
+    tax //Lo
+    pla
+    tay //Hi
+}
 
+.macro push16(word) { //word to put on stack
+    lda #>word //Hi
+    pha
+    lda #<word //Lo
+    pha
+}
+
+.macro pushptr(ptr) { //ptr to put on stack
+    lda ptr+1 //Hi
+    pha
+    lda ptr   //Lo
+    pha
+}
+
+.macro pull16(ptr) { //ptr to pull from stack
+    pla
+    sta ptr   //Lo
+    pla
+    sta ptr+1 //Hi
+}
+
+//---------------------------------------
+
+.macro copy16(word, dest) {
+    lda #<word
+    sta dest   //1st: lo byte
+    lda #>word
+    sta dest+1 //2nd: hi byte
+}
+
+.macro copyptr(ptr, dest) {
+    lda ptr
+    sta dest   //1st: lo byte
+    lda ptr+1
+    sta dest+1 //2nd: hi byte
+}
