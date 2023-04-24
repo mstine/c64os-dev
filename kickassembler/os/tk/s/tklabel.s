@@ -1,11 +1,12 @@
+#import "tksizes.s"
 //----[ tklabel.s ]----------------------
 
 //----String Flags-------
 
-a_lft    = %00000001 //Align Left
-a_rgt    = %00000010 //Align Right
+.label a_lft    = %00000001 //Align Left
+.label a_rgt    = %00000010 //Align Right
 
-f_rev    = %10000000 //Reverse Draw
+.label f_rev    = %10000000 //Reverse Draw
 
 //Text Align Bits
 
@@ -17,8 +18,5 @@ f_rev    = %10000000 //Reverse Draw
 //----Text Props---------
 
 //strptr   = tkviewsz
-strflgs  = tkviewsz+2
-strlgth  = tkviewsz+3
-
-
-
+.label strflgs  = tkviewsz+2
+.label strlgth  = tkviewsz+3

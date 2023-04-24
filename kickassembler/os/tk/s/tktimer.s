@@ -1,24 +1,10 @@
+#import "tksizes.s"
 //----[ tktimer.s ]----------------------
 
-ti_cnting = tkviewsz
-ti_value = tkviewsz+1
-ti_reset = tkviewsz+4
-ti_mode  = tkviewsz+7
-ti_callb = tkviewsz+8
+.label ti_cnting = tkviewsz
+.label ti_value = tkviewsz+1
+.label ti_reset = tkviewsz+4
+.label ti_mode  = tkviewsz+7
+.label ti_callb = tkviewsz+8
 
-tktimersz = tkviewsz+10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label tktimersz = tkviewsz+10

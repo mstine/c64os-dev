@@ -1,47 +1,47 @@
+#import "tksizes.s"
 //----[ tkview.s ]-----------------------
 
-colcoord = $61 // $62 //multplr
-rowcoord = $63 // $64 //multcnd
+.label colcoord = $61 // $62 //multplr
+.label rowcoord = $63 // $64 //multcnd
 
 //----Responder Props----
 
-nextresp = tkobjsz
+.label nextresp = tkobjsz
 
 //----Node Props---------
 
-parent   = tkobjsz+2
-child    = tkobjsz+4
-sibling  = tkobjsz+6
+.label parent   = tkobjsz+2
+.label child    = tkobjsz+4
+.label sibling  = tkobjsz+6
 
-tag      = tkobjsz+8
+.label tag      = tkobjsz+8
 
 //----Sizing Props-------
 
-offtop   = tkobjsz+9
-offbot   = tkobjsz+11
-absbot   = tkobjsz+13
-height   = tkobjsz+15
+.label offtop   = tkobjsz+9
+.label offbot   = tkobjsz+11
+.label absbot   = tkobjsz+13
+.label height   = tkobjsz+15
 
-offleft  = tkobjsz+17
-offrght  = tkobjsz+19
-absrght  = tkobjsz+21
-width    = tkobjsz+23
+.label offleft  = tkobjsz+17
+.label offrght  = tkobjsz+19
+.label absrght  = tkobjsz+21
+.label width    = tkobjsz+23
 
-rsmask   = tkobjsz+25
+.label rsmask   = tkobjsz+25
 
 //----Scrolling Props----
 
-s_top    = tkobjsz+26
-s_left   = tkobjsz+28
+.label s_top    = tkobjsz+26
+.label s_left   = tkobjsz+28
 
 //----Drawing Props------
 
-dflags   = tkobjsz+30
-mflags   = tkobjsz+31
-bcolor   = tkobjsz+32
+.label dflags   = tkobjsz+30
+.label mflags   = tkobjsz+31
+.label bcolor   = tkobjsz+32
 
 //----Hit Props----------
 
-hitrow   = tkobjsz+33
-hitcol   = tkobjsz+35
-
+.label hitrow   = tkobjsz+33
+.label hitcol   = tkobjsz+35

@@ -1,26 +1,26 @@
+#importonce 
 //----[ tksizes.s ]----------------------
 
-tkobjsz  = 2
+.label tkobjsz  = 2
 
-tkviewsz = tkobjsz+37
+.label tkviewsz = tkobjsz+37
 
-tksplitsz = tkviewsz+6
-tktabssz = tkviewsz+15
-tkscrollsz = tkviewsz+7
-tklabelsz = tkviewsz+5
-tkctrlsz = tkviewsz+15
+.label tksplitsz = tkviewsz+6
+.label tktabssz = tkviewsz+15
+.label tkscrollsz = tkviewsz+7
+.label tklabelsz = tkviewsz+5
+.label tkctrlsz = tkviewsz+15
 
-tkbuttonsz = tkctrlsz+8
-tksbarsz = tkctrlsz+11
+.label tkbuttonsz = tkctrlsz+8
+.label tksbarsz = tkctrlsz+11
 
 //Custom Classes
 
-tkplacessz = tkviewsz+9
-tklistsz = tkviewsz+10
-tktablesz = tklistsz+2
-tktcolssz = tkscrollsz+8
-tkinputsz = tkctrlsz+6
-tktextsz = tkviewsz+13
-tkfilemetasz = tkviewsz+6
-tkiconsz = tkctrlsz+3
-
+.label tkplacessz = tkviewsz+9
+.label tklistsz = tkviewsz+10
+.label tktablesz = tklistsz+2
+.label tktcolssz = tkscrollsz+8
+.label tkinputsz = tkctrlsz+6
+.label tktextsz = tkviewsz+13
+.label tkfilemetasz = tkviewsz+6
+.label tkiconsz = tkctrlsz+3

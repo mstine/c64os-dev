@@ -1,3 +1,4 @@
+#import "tksizes.s"
 //----[ tksbar.s ]-----------------------
 
 //----Orient Values------
@@ -10,15 +11,12 @@
 
 //----Configurable Props----
 
-orient   = tkctrlsz   //Orientation
+.label orient   = tkctrlsz   //Orientation
 
 //----Computed Props--------
 
-scrlns   = tkctrlsz+1 //Scrollable Lines
-nubsz    = tkctrlsz+3 //Nub Size
-nublns   = tkctrlsz+5 //Nub Movable Lines
-nuboff   = tkctrlsz+7 //Nub Offset
-pagesz   = tkctrlsz+9 //Page Size
-
-
-
+.label scrlns   = tkctrlsz+1 //Scrollable Lines
+.label nubsz    = tkctrlsz+3 //Nub Size
+.label nublns   = tkctrlsz+5 //Nub Movable Lines
+.label nuboff   = tkctrlsz+7 //Nub Offset
+.label pagesz   = tkctrlsz+9 //Page Size

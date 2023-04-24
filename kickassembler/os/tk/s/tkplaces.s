@@ -1,24 +1,12 @@
+#import "tksizes.s"
 //----[ tkplaces.s ]---------------------
 
-appmode  = tkviewsz
-devshide = tkviewsz+1
-listmode = tkviewsz+2
+.label appmode  = tkviewsz
+.label devshide = tkviewsz+1
+.label listmode = tkviewsz+2
 
 //-- Callbacks -------
 
-curdev   = tkviewsz+3
-devclik  = tkviewsz+5
-itemclik = tkviewsz+7
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label curdev   = tkviewsz+3
+.label devclik  = tkviewsz+5
+.label itemclik = tkviewsz+7

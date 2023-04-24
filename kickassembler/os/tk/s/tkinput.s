@@ -1,24 +1,19 @@
+#import "tksizes.s"
 //----[ tkinput.s ]----------------------
 
 //delegate struct
-willins  = 0
-didchng  = 2
-didfoc   = 4
-didblur  = 6
+.label willins  = 0
+.label didchng  = 2
+.label didfoc   = 4
+.label didblur  = 6
 
 //----Editing Props------
 
-istrlen  = tkctrlsz
-ilenmax  = tkctrlsz+1
-iindex   = tkctrlsz+2
-ianchor  = tkctrlsz+3
+.label istrlen  = tkctrlsz
+.label ilenmax  = tkctrlsz+1
+.label iindex   = tkctrlsz+2
+.label ianchor  = tkctrlsz+3
 
 //----Control Props------
 
-idelegs  = tkctrlsz+4
-
-
-
-
-
-
+.label idelegs  = tkctrlsz+4

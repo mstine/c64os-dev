@@ -1,24 +1,7 @@
+#import "tksizes.s"
 //----[ tkdatepick.s ]-------------------
 
-dp_year  = tkviewsz
-dp_date  = tkviewsz+4
+.label dp_year  = tkviewsz
+.label dp_date  = tkviewsz+4
 
-tkdatepicksz = tkviewsz+6
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label tkdatepicksz = tkviewsz+6

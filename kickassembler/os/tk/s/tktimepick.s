@@ -1,24 +1,9 @@
+#import "tksizes.s"
 //----[ tktimepick.s ]-------------------
 
-tp_24h   = tkviewsz
-tp_hr    = tkviewsz+1
-tp_min   = tkviewsz+3
-tp_ampm  = tkviewsz+5
+.label tp_24h   = tkviewsz
+.label tp_hr    = tkviewsz+1
+.label tp_min   = tkviewsz+3
+.label tp_ampm  = tkviewsz+5
 
-tktimepicksz = tkviewsz+6
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label tktimepicksz = tkviewsz+6

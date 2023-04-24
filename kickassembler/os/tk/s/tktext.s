@@ -1,24 +1,23 @@
+#import "tksizes.s"
 //----[ tktext.s ]-----------------------
 
 //----String Flags-------
 
-f_wrap   = %00000001
-f_sel    = %00000010 //Selectable
-f_asc    = %01000000 //Asc2Pet
-f_rev    = %10000000 //Reverse Draw
+.label f_wrap   = %00000001
+.label f_sel    = %00000010 //Selectable
+.label f_asc    = %01000000 //Asc2Pet
+.label f_rev    = %10000000 //Reverse Draw
 
 //----Text Props---------
 
-tstrptr  = tkviewsz
+.label tstrptr  = tkviewsz
 
-tstrflgs = tkviewsz+2
-tlinemap = tkviewsz+3
-tmapsize = tkviewsz+4
+.label tstrflgs = tkviewsz+2
+.label tlinemap = tkviewsz+3
+.label tmapsize = tkviewsz+4
 
-tcwidth  = tkviewsz+5
-tcheight = tkviewsz+7
+.label tcwidth  = tkviewsz+5
+.label tcheight = tkviewsz+7
 
-tselstrt = tkviewsz+9
-tselend  = tkviewsz+11
-
-
+.label tselstrt = tkviewsz+9
+.label tselend  = tkviewsz+11

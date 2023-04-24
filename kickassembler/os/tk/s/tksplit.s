@@ -1,24 +1,16 @@
+#import "tksizes.s"
 //----[ tksplit.s ]----------------------
 
 //Split Orientations
-so_hor   = 0
-so_ver   = 1
+.label so_hor   = 0
+.label so_ver   = 1
 
-clps_hor = %10000000 //asl -> Carry
-clps_ver = %00000001 //lsr -> Carry
+.label clps_hor = %10000000 //asl -> Carry
+.label clps_ver = %00000001 //lsr -> Carry
 
 //----Sizing Props----
 
-orient   = tkviewsz    //1
-spos     = tkviewsz+1  //2
-schild   = tkviewsz+3  //2
-collapse = tkviewsz+5  //1
-
-
-
-
-
-
-
-
-
+.label orient   = tkviewsz    //1
+.label spos     = tkviewsz+1  //2
+.label schild   = tkviewsz+3  //2
+.label collapse = tkviewsz+5  //1

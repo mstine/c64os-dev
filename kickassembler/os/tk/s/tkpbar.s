@@ -1,24 +1,9 @@
+#import "tksizes.s"
 //----[ tkpbar.s ]-----------------------
 
-pathdep  = tkviewsz
+.label pathdep  = tkviewsz
 
 //----Callbacks----------
 
-pathclik = tkviewsz+1
-
-
-tkpbarsz = tkviewsz+3
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label pathclik = tkviewsz+1
+.label tkpbarsz = tkviewsz+3

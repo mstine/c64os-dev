@@ -1,24 +1,7 @@
+#import "tksizes.s"
 //----[ tkfilemeta.s ]-------------------
 
-fm_dtype = tkviewsz
-fm_stype = tkviewsz+1
-fm_dsize = tkviewsz+2
-fm_fdir  = tkviewsz+4
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label fm_dtype = tkviewsz
+.label fm_stype = tkviewsz+1
+.label fm_dsize = tkviewsz+2
+.label fm_fdir  = tkviewsz+4

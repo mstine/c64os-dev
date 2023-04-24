@@ -1,24 +1,21 @@
+#import "tksizes.s"
 //----[ tktabs.s ]-----------------------
 
 //tktabs delegate struct
-tabstr   = 0
-willblur = 2
-willfoc  = 4
-didblur  = 6
-didfoc   = 8
+.label tabstr   = 0
+.label willblur = 2
+.label willfoc  = 4
+.label didblur  = 6
+.label didfoc   = 8
 
 //----Selection Props----
 
-curtab   = tkviewsz    // 1
-tabsz    = tkviewsz+1  //10
-tabcnt   = tkviewsz+11 // 1
+.label curtab   = tkviewsz    // 1
+.label tabsz    = tkviewsz+1  //10
+.label tabcnt   = tkviewsz+11 // 1
 
-hltab    = tkviewsz+12 // 1
+.label hltab    = tkviewsz+12 // 1
 
 //----Control Props----
 
-delegate = tkviewsz+13 // 2
-
-
-
-
+.label delegate = tkviewsz+13 // 2

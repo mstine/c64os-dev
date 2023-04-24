@@ -1,24 +1,7 @@
+#import "tksizes.s"
 //----[ tktcols.s ]----------------------
 
-
-colsdef  = tkscrollsz
-c_left   = tkscrollsz+2
-colclik  = tkscrollsz+4
-colinfo  = tkscrollsz+6
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label colsdef  = tkscrollsz
+.label c_left   = tkscrollsz+2
+.label colclik  = tkscrollsz+4
+.label colinfo  = tkscrollsz+6
