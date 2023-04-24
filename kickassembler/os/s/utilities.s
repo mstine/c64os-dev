@@ -9,16 +9,4 @@
 //Linked Application menus will be
 //relinked to the new utilities menu.
 
-readutils = $2100   //3 Pages Relocatable
-
-
-
-
-
-
-
-
-
-
-
-
+.label readutils = $2100   //3 Pages Relocatable

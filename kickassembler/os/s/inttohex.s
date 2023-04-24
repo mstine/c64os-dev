@@ -9,10 +9,10 @@ tohex:    //.A -> An int 0+255
     pha
     pha
 
-    lsr a
-    lsr a
-    lsr a
-    lsr a
+    lsr
+    lsr
+    lsr
+    lsr
     tax
     lda hexits,x
     tay

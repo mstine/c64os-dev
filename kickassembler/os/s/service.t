@@ -1,90 +1,90 @@
 //----[ service.t ]----------------------
 
-jiffylo  = $a2       //Jiffy Clock 24-bit
-jiffymi  = $a1
-jiffyhi  = $a0
-jcount   = $cd       //Jiffy Counter
-jc_min   = $eb       //to $ee
+.label jiffylo  = $a2       //Jiffy Clock 24-bit
+.label jiffymi  = $a1
+.label jiffyhi  = $a0
+.label jcount   = $cd       //Jiffy Counter
+.label jc_min   = $eb       //to $ee
 
-sysjmp   = $54       //JMP jmpvec
-jmpvec   = $55//$56
+.label sysjmp   = $54       //JMP jmpvec
+.label jmpvec   = $55//$56
 
-raw_rts  = $02b2     //Address of an RTS
-sec_rts  = $02b3     //Set Carry,    RTS
-clc_rts  = $02b5     //Clear Carry,  RTS
+.label raw_rts  = $02b2     //Address of an RTS
+.label sec_rts  = $02b3     //Set Carry,    RTS
+.label clc_rts  = $02b5     //Clear Carry,  RTS
 
 //sev      .macro           //SEt oVerflow
 //         bit raw_rts
 //         .endm
 
-emptystr = $02b7     //Address of 0-Byte
+.label emptystr = $02b7     //Address of 0-Byte
 
-sysfref  = $02c0     //System File Ref
-homebase = $02e9     //Current Homebase
+.label sysfref  = $02c0     //System File Ref
+.label homebase = $02e9     //Current Homebase
 
-evttime  = $02ff     //CPUBusy Event Time
-cpuusage = $0217     //CPU Usage History
-busychar = $e6
+.label evttime  = $02ff     //CPUBusy Event Time
+.label cpuusage = $0217     //CPU Usage History
+.label busychar = $e6
 
-loopbrkvec = $0336   //Event Loop Break
-appfileref = $0338   //Current App Folder
-opnfileref = $033a   //Auto-Open File
+.label loopbrkvec = $0336   //Event Loop Break
+.label appfileref = $0338   //Current App Folder
+.label opnfileref = $033a   //Auto-Open File
 
-berrcode = $03b9     //BASIC Error Code
-basicerr = $08f0     //BASIC Err Handler
+.label berrcode = $03b9     //BASIC Error Code
+.label basicerr = $08f0     //BASIC Err Handler
 
 //Patches in IO/KERNAL
 //Redirects through redirectvec
 //Patches IO/KERNAL out
 
-redirect = $08f4     //KERNAL/IO Patch
-redirectvec = $08f9  //JMP to address
+.label redirect = $08f4     //KERNAL/IO Patch
+.label redirectvec = $08f9  //JMP to address
 
 //Pass message to Util as it opens.
-opnutilmcmd = $03fa  //Message Command
-opnutilmdlo = $03fb  //Message Data Lo
-opnutilmdhi = $03fc  //Message Data Hi
+.label opnutilmcmd = $03fa  //Message Command
+.label opnutilmdlo = $03fb  //Message Data Lo
+.label opnutilmdhi = $03fc  //Message Data Hi
 
 //Pass message to App as it opens.
-opnappmcmd = $03fa   //Message Command
-opnappmdlo = $03fb   //Message Data Lo
-opnappmdhi = $03fc   //Message Data Hi
+.label opnappmcmd = $03fa   //Message Command
+.label opnappmdlo = $03fb   //Message Data Lo
+.label opnappmdhi = $03fc   //Message Data Hi
 
-syskvals = $02b8   //System Key Values
-syskmods = $02bc   //System Key Modifiers
+.label syskvals = $02b8   //System Key Values
+.label syskmods = $02bc   //System Key Modifiers
 
 //When in rgraphix mode
 //hmemuse will always have hmembitm set.
 
-himemuse = $03fe   //Himem Usage
+.label himemuse = $03fe   //Himem Usage
 
-hmemfree = %00000000 //Free/Unused
-hmemutil = %00000001 //Utility Executable
-hmembuff = %00000010 //Generic Buffer
+.label hmemfree = %00000000 //Free/Unused
+.label hmemutil = %00000001 //Utility Executable
+.label hmembuff = %00000010 //Generic Buffer
 //...
-hmembitm = %01000000 //Bitmap Mode Data
-hmemmult = %10000000 //Multi-Col Bitmap
+.label hmembitm = %01000000 //Bitmap Mode Data
+.label hmemmult = %10000000 //Multi-Col Bitmap
 
 //Graphix State Struct
 
 //--- gfx.lib requires first 6 bytes ---
 
-ghimemflg = 0 //1 Byte  himem flags
-gcolhptr = 1  //2 Bytes screen mem buf
-gcolmptr = 3  //2 Bytes color  mem buf
-gbgcol   = 5  //1 Byte  background color
+.label ghimemflg = 0 //1 Byte  himem flags
+.label gcolhptr = 1  //2 Bytes screen mem buf
+.label gcolmptr = 3  //2 Bytes color  mem buf
+.label gbgcol   = 5  //1 Byte  background color
 
 //--- data loaders/savers need these ----
 
-gbmapptr = 6  //2 Bytes bitmap mem buf
-gchbufsz = 8  //1 Bytes scr mem buf sz
-gcmbufsz = 9  //1 Bytes col mem buf sz
-gbmbufsz = 10 //1 Bytes bit mem buf sz
+.label gbmapptr = 6  //2 Bytes bitmap mem buf
+.label gchbufsz = 8  //1 Bytes scr mem buf sz
+.label gcmbufsz = 9  //1 Bytes col mem buf sz
+.label gbmbufsz = 10 //1 Bytes bit mem buf sz
 
              //11 Bytes Total
 
 
-redrawflgs = $03ff //Redraw Active Flags
+.label redrawflgs = $03ff //Redraw Active Flags
 
 //rnewgfx informs the split code that
 //graphics data needs to be copied from
@@ -96,26 +96,25 @@ redrawflgs = $03ff //Redraw Active Flags
 //rgraphix indicates if full screen gfx
 //is currently active or not.
 
-rnewgfx  = %00000001 //New GFX data
-renagfx  = %00000010 //Enable Full GFX
-rgraphix = %00000100 //Full GFX state
+.label rnewgfx  = %00000001 //New GFX data
+.label renagfx  = %00000010 //Enable Full GFX
+.label rgraphix = %00000100 //Full GFX state
 
-rmodal   = %00001000
-rstatbar = %00010000
-rcpubusy = %00100000
-rclock   = %01000000
-rmenubar = %10000000
+.label rmodal   = %00001000
+.label rstatbar = %00010000
+.label rcpubusy = %00100000
+.label rclock   = %01000000
+.label rmenubar = %10000000
 
 //Shared Libraries
 
-libchrlo = $08a2 //$08ab
-libchrhi = $08ac //$08b5
-libinfo  = $08b6 //$08bf
-liblocs  = $08c0 //$08c9
+.label libchrlo = $08a2 //$08ab
+.label libchrhi = $08ac //$08b5
+.label libinfo  = $08b6 //$08bf
+.label liblocs  = $08c0 //$08c9
 
 //loadlib:
-slnoinit = %10000000 //Skip Auto Init
+.label slnoinit = %10000000 //Skip Auto Init
 
 //unldlib:
-slunload = %10000000 //Make Unload Call
-
+.label slunload = %10000000 //Make Unload Call

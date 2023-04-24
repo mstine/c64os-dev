@@ -1,13 +1,13 @@
 //----[ screen.t ]-----------------------
 
-screen_cols = 40
-screen_rows = 25
+.label screen_cols = 40
+.label screen_rows = 25
 
-split    = $3f //Current Screen Split Row
-lastsplt = $40    //Last Screen Split Row
+.label split    = $3f //Current Screen Split Row
+.label lastsplt = $40    //Last Screen Split Row
 
-colhbuf  = $0300//$0301 Hires Color Buf
-colmbuf  = $0302//$0303 Multi Color Buf
+.label colhbuf  = $0300//$0301 Hires Color Buf
+.label colmbuf  = $0302//$0303 Multi Color Buf
 
 //When moving the split, line at a time:
 
@@ -22,16 +22,15 @@ colmbuf  = $0302//$0303 Multi Color Buf
 //if multicolor bitmap, repeat to move
 //a row from colmbuf to color memory.
 
-rvs_mask = %10000000
+.label rvs_mask = %10000000
 
 //Struct: Screen Layer
-sldraw   = 0 //Vec redraw screen
-slmous   = 2 //Vec handle mouse event
-slkcmd   = 4 //Vec handle key command
-slkprt   = 6 //Vec handle key print
-slindx   = 8 //This layer's pushed index
+.label sldraw   = 0 //Vec redraw screen
+.label slmous   = 2 //Vec handle mouse event
+.label slkcmd   = 4 //Vec handle key command
+.label slkprt   = 6 //Vec handle key print
+.label slindx   = 8 //This layer's pushed index
 
-slsize   = 9 //sizeof a screen layer
+.label slsize   = 9 //sizeof a screen layer
 
-current  = $0381 //Current Render Layer
-
+.label current  = $0381 //Current Render Layer

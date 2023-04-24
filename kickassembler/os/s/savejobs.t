@@ -6,10 +6,10 @@
 
 //SaveJob Struct
 
-sj_type  = 0 //4 SaveJob Type Code
-sj_vcb   = 4 //2 Validation Callback
-sj_ovr   = 6 //1 Overwrite Flag
-sj_nlen  = 7 //1 Filename Length
+.label sj_type  = 0 //4 SaveJob Type Code
+.label sj_vcb   = 4 //2 Validation Callback
+.label sj_ovr   = 6 //1 Overwrite Flag
+.label sj_nlen  = 7 //1 Filename Length
 
 //SaveJob size = 8
 
@@ -29,4 +29,3 @@ sj_nlen  = 7 //1 Filename Length
 //"sjsf" Save   File
 //"sjcf" Create File
 //"sjbX" Browse X=f
-

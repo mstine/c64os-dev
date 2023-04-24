@@ -2,15 +2,15 @@
 
 //Header for sidplay.lib.r
 
-spirqvec = $0334 //$0335
+.label spirqvec = $0334 //$0335
 
-sps_hold = $ff
-sps_halt = $fe
-sps_play = $fd
+.label sps_hold = $ff
+.label sps_halt = $fe
+.label sps_play = $fd
 
-spi_name = $00
-spi_auth = $01
-spi_copy = $02
+.label spi_name = $00
+.label spi_auth = $01
+.label spi_copy = $02
 
 //Init called automatically by loadlib.
 //init    = 0
@@ -18,7 +18,7 @@ spi_copy = $02
 //Unload called automatically by unldlib.
 //unload  = 3
 
-loadtune_ = 6
+.label loadtune_ = 6
 //  RegPtr -> File Ref to relocated SID
 //  C <- CLR = SID file loaded.
 //  A <- Number of songs loaded.
@@ -30,10 +30,9 @@ loadtune_ = 6
 //  C <- CLR = Unloaded.
 //  C <- SET = Nothing was loaded.
 
-stattune_ = 9
+.label stattune_ = 9
 //  A -> Tune State{SHIFT--}Tune# to init
 
-tuneinfo_ = 12
+.label tuneinfo_ = 12
 //  A      -> Sidplay Tune Info Index
 //  RegPtr <- Pointer to info string
-

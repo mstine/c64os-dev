@@ -1,2 +1,2 @@
-width_          = $0059
-height_         = $005b
+.label width_          = $0059
+.label height_         = $005b
