@@ -1,43 +1,42 @@
 //----[ compare16.s ]--------------------
 
 //16-bit Comparisons
-gtewrd   .macro //num1,word,<label
-         lda \1+1
-         cmp #>\2
-         bcc \3
-         bne gte
-         lda \1
-         cmp #<\2
-         bcc \3
-gte
-         .endm
+.macro gtewrd(num1, word, lessThanLabel) {
+    lda num1+1
+    cmp #>word
+    bcc lessThanLabel
+    bne gte
+    lda num1
+    cmp #<word
+    bcc lessThanLabel
+gte:
+}
 
-gte16    .macro //num1,num2,<label
-         lda \1+1
-         cmp \2+1
-         bcc \3
-         bne gte
-         lda \1
-         cmp \2
-         bcc \3
-gte
-         .endm
+.macro gte16(num1, num2, lessThanLabel) {
+    lda num1+1
+    cmp num2+1
+    bcc lessThanLabel
+    bne gte
+    lda num1
+    cmp num2
+    bcc lessThanLabel
+gte:
+}
 
-eqwrd    .macro //num1,word,!=label
-         lda \1
-         cmp #<\2
-         bne \3
-         lda \1+1
-         cmp #>\2
-         bne \3
-         .endm
+.macro eqwrd(num1, word, notEqualsLabel) {
+    lda num1
+    cmp #<word
+    bne notEqualsLabel
+    lda num1+1
+    cmp #>word
+    bne notEqualsLabel
+}
 
-eq16     .macro //num1,num2,!=label
-         lda \1
-         cmp \2
-         bne \3
-         lda \1+1
-         cmp \2+1
-         bne \3
-         .endm
-
+.macro eq16(num1, num2, notEqualsLabel) {
+    lda num1
+    cmp num2
+    bne notEqualsLabel
+    lda num1+1
+    cmp num2+1
+    bne notEqualsLabel
+}
