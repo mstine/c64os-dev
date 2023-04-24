@@ -1,2 +1,2 @@
-presort_        = $0000
-sort_           = $0003
+.label presort_        = $0000
+.label sort_           = $0003

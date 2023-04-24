@@ -1,24 +1,7 @@
-;----[ flock.t ]------------------------
+//----[ flock.t ]------------------------
 
-;link    = 0
+//link    = 0
 
-toglock  = 3
-;  Toggle a file's locked status
-;  RegPtr -> file ref to file to un/lock
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label toglock  = 3
+//  Toggle a file's locked status
+//  RegPtr -> file ref to file to un/lock

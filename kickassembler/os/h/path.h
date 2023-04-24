@@ -1,7 +1,7 @@
-pathadd         = $0006
-pathup          = $0009
-partroot        = $000c
-devroot         = $000f
-gopath          = $0012
-frclip          = $0015
-setname         = $0003
+.label pathadd         = $0006
+.label pathup          = $0009
+.label partroot        = $000c
+.label devroot         = $000f
+.label gopath          = $0012
+.label frclip          = $0015
+.label setname         = $0003

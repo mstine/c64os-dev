@@ -1,186 +1,185 @@
-;----[ float.t ]----------------------
+//----[ float.t ]----------------------
 
-;*************************************
-;* ==-- FLOATING POINT ROUTINES --== *
-;*************************************
+//*************************************
+//* ==-- FLOATING POINT ROUTINES --== *
+//*************************************
 
-;Text Conversion Routines
+//Text Conversion Routines
 
-strfac   = $bcf3
-;txtptr -> pointer to string
-;fac <- floating point number
+.label strfac   = $bcf3
+//txtptr -> pointer to string
+//fac <- floating point number
 
-facstr   = $bddd
-;fac -> floating point number
-;A/Y <- pointer to string conversion
+.label facstr   = $bddd
+//fac -> floating point number
+//A/Y <- pointer to string conversion
 
-chrget   = $73
-chrgot   = $79
+.label chrget   = $73
+.label chrgot   = $79
 
-;Int to Float Conversions
+//Int to Float Conversions
 
-int8fac  = $bc3c
-;A -> Signed 8bit Int
-;fac <- floating point number
+.label int8fac  = $bc3c
+//A -> Signed 8bit Int
+//fac <- floating point number
 
-uint8fac = $b3a2
-;Y -> Unsigned 8bit Int
-;fac <- floating point number
+.label uint8fac = $b3a2
+//Y -> Unsigned 8bit Int
+//fac <- floating point number
 
-int16fac = $b395
-;A -> Signed 16bit Int lo byte
-;Y -> Signed 16bit Int hi byte
-;fac <- floating point number
-
-
-;Float to Int Conversions
-
-facint32 = $bc9b
-;fac -> floating point number
-;$62 <- Signed 32bit Int
+.label int16fac = $b395
+//A -> Signed 16bit Int lo byte
+//Y -> Signed 16bit Int hi byte
+//fac <- floating point number
 
 
-;Memory Move Functions
+//Float to Int Conversions
 
-facmem   = $bbd4
-;fac -> float
-;RegPtr -> Pointer to where to copy FAC
-
-memfac   = $bba2
-;A/Y -> float
-;fac <- float
-
-memarg   = $ba8c
-;A/Y -> float
-;arg <- float
-
-facarg   = $bc0c
-;fac -> float
-;arg <- float
-
-argfac   = $bbfc
-;arg -> float
-;fac <- float
+.label facint32 = $bc9b
+//fac -> floating point number
+//$62 <- Signed 32bit Int
 
 
-;Floating Point Functions: FAC = F(FAC)
+//Memory Move Functions
 
-fp_rnd   = $e097
+.label facmem   = $bbd4
+//fac -> float
+//RegPtr -> Pointer to where to copy FAC
 
-fp_abs   = $bc58
-fp_sgn   = $bc39
-fp_exp   = $bfed
-fp_int   = $bccc
+.label memfac   = $bba2
+//A/Y -> float
+//fac <- float
 
-fp_log   = $b9ea
-fp_sqr   = $bf71
+.label memarg   = $ba8c
+//A/Y -> float
+//arg <- float
 
-fp_sin   = $e26b
-fp_cos   = $e264
-fp_tan   = $e2b4
-fp_atn   = $e30e
+.label facarg   = $bc0c
+//fac -> float
+//arg <- float
 
-
-;Arithmetic Operations
-
-memplus  = $b867
-;fac -> float
-;A/Y -> float
-;fac <- fac+mem
-
-plus     = $b86a
-;fac -> float
-;arg -> float
-;A   -> fac exp
-;fac <- fac+arg
+.label argfac   = $bbfc
+//arg -> float
+//fac <- float
 
 
-memminus = $b850
-;fac -> float
-;A/Y -> float
-;fac <- mem-fac
+//Floating Point Functions: FAC = F(FAC)
 
-minus    = $b853
-;fac -> float
-;arg -> float
-;A   -> fac exp
-;fac <- arg-fac
+.label fp_rnd   = $e097
 
+.label fp_abs   = $bc58
+.label fp_sgn   = $bc39
+.label fp_exp   = $bfed
+.label fp_int   = $bccc
 
-memmult  = $ba28
-;fac -> float
-;A/Y -> float
-;fac <- fac*mem
+.label fp_log   = $b9ea
+.label fp_sqr   = $bf71
 
-mult     = $ba2b
-;fac -> float
-;arg -> float
-;A   -> fac exp
-;fac <- fac*arg
+.label fp_sin   = $e26b
+.label fp_cos   = $e264
+.label fp_tan   = $e2b4
+.label fp_atn   = $e30e
 
 
-memdivi  = $bb0f
-;fac -> float
-;A/Y -> float
-;fac <- mem/fac
+//Arithmetic Operations
 
-divi     = $bb12
-;fac -> float
-;arg -> float
-;A   -> fac exp
-;fac <- arg/fac
+.label memplus  = $b867
+//fac -> float
+//A/Y -> float
+//fac <- fac+mem
 
-
-mempow   = $bf78
-;arg -> float
-;A/Y -> float
-;fac <- arg^mem
-
-power    = $bf7b
-;fac -> float
-;arg -> float
-;A   -> fac exp
-;fac <- arg^fac
+.label plus     = $b86a
+//fac -> float
+//arg -> float
+//A   -> fac exp
+//fac <- fac+arg
 
 
-mult10   = $bae2
-;fac -> float
-;fac <- fac*10
+.label memminus = $b850
+//fac -> float
+//A/Y -> float
+//fac <- mem-fac
 
-divi10   = $bafe
-;fac -> float
-;fac <- fac/10
-
-
-;Logical Operations: On int16 conversion
-
-fp_or    = $afe6
-;fac -> float
-;arg -> float
-;fac <- float(int16(arg){SHIFT--}int16(fac))
-
-fp_and   = $afe9
-;fac -> float
-;arg -> float
-;fac <- float(int16(arg)&int16(fac))
-
-fp_not   = $aed4
-;fac -> float
-;fac <- float(!int16(fac))
+.label minus    = $b853
+//fac -> float
+//arg -> float
+//A   -> fac exp
+//fac <- arg-fac
 
 
-;Other Operations
+.label memmult  = $ba28
+//fac -> float
+//A/Y -> float
+//fac <- fac*mem
 
-fp_cmp   = $bc5b
-;fac -> float
-;A/Y -> float
-;A   <- mem > fac
+.label mult     = $ba2b
+//fac -> float
+//arg -> float
+//A   -> fac exp
+//fac <- fac*arg
 
-fp_round = $bc1b
-;fac -> float
-;fac <- round(fac)
 
-fp_chgsgn = $bfb4
-;fac -> float
-;fac <- fac*-1
+.label memdivi  = $bb0f
+//fac -> float
+//A/Y -> float
+//fac <- mem/fac
 
+.label divi     = $bb12
+//fac -> float
+//arg -> float
+//A   -> fac exp
+//fac <- arg/fac
+
+
+.label mempow   = $bf78
+//arg -> float
+//A/Y -> float
+//fac <- arg^mem
+
+.label power    = $bf7b
+//fac -> float
+//arg -> float
+//A   -> fac exp
+//fac <- arg^fac
+
+
+.label mult10   = $bae2
+//fac -> float
+//fac <- fac*10
+
+.label divi10   = $bafe
+//fac -> float
+//fac <- fac/10
+
+
+//Logical Operations: On int16 conversion
+
+.label fp_or    = $afe6
+//fac -> float
+//arg -> float
+//fac <- float(int16(arg){SHIFT--}int16(fac))
+
+.label fp_and   = $afe9
+//fac -> float
+//arg -> float
+//fac <- float(int16(arg)&int16(fac))
+
+.label fp_not   = $aed4
+//fac -> float
+//fac <- float(!int16(fac))
+
+
+//Other Operations
+
+.label fp_cmp   = $bc5b
+//fac -> float
+//A/Y -> float
+//A   <- mem > fac
+
+.label fp_round = $bc1b
+//fac -> float
+//fac <- round(fac)
+
+.label fp_chgsgn = $bfb4
+//fac -> float
+//fac <- fac*-1

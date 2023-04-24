@@ -1,24 +1,8 @@
 ;----[ menu.h ]-------------------------
 
-lmnu     = $0100-(2*6)
+.label lmnu     = $0100-(2*6)
 
-mnudraw_ = 0
-mnumouse_ = 3
-mnukcmd_ = 6
-deactiv_ = 9
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label mnudraw_ = 0
+.label mnumouse_ = 3
+.label mnukcmd_ = 6
+.label deactiv_ = 9

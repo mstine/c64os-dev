@@ -1,6 +1,6 @@
-ldfavs          = $0006
-ldrcnts         = $0009
-rdfav           = $000c
-rdrcnt          = $000f
-addfav          = $0012
-addrcnt         = $0015
+.label ldfavs          = $0006
+.label ldrcnts         = $0009
+.label rdfav           = $000c
+.label rdrcnt          = $000f
+.label addfav          = $0012
+.label addrcnt         = $0015

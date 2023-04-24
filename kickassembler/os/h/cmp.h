@@ -1,1 +1,1 @@
-Confcmp_        = $0000
+.label Confcmp_        = $0000

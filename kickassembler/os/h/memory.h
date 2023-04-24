@@ -1,24 +1,15 @@
-;----[ memory.h ]-----------------------
+//----[ memory.h ]-----------------------
 
-lmem     = $0100-(2*1)
+.label lmem     = $0100-(2*1)
 
-memcpy_  = 0
-memset_  = 3
-memfree_ = 6
-free_    = 9
-malloc_  = 12
-pgfree_  = 15
-pgmark_  = 18
-pgalloc_ = 21
-reuconf_ = 24
-pgfetch_ = 27
-pgstash_ = 30
-
-
-
-
-
-
-
-
-
+.label memcpy_  = 0
+.label memset_  = 3
+.label memfree_ = 6
+.label free_    = 9
+.label malloc_  = 12
+.label pgfree_  = 15
+.label pgmark_  = 18
+.label pgalloc_ = 21
+.label reuconf_ = 24
+.label pgfetch_ = 27
+.label pgstash_ = 30

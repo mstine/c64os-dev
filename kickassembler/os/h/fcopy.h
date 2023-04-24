@@ -1,5 +1,5 @@
-Confcopy_       = $0006
-filecopy_       = $0009
-spotcopy_       = $000c
-renamef_        = $000f
-scratchf_       = $0012
+.label Confcopy_       = $0006
+.label filecopy_       = $0009
+.label spotcopy_       = $000c
+.label renamef_        = $000f
+.label scratchf_       = $0012

@@ -1,1 +1,1 @@
-toglock         = $0003
+.label toglock         = $0003

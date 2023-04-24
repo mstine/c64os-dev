@@ -1,3 +1,3 @@
-getdirp_        = $0000
-freedir_        = $0003
-readdir_        = $0006
+.label getdirp_        = $0000
+.label freedir_        = $0003
+.label readdir_        = $0006

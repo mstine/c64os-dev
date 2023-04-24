@@ -1,10 +1,9 @@
-;----[ cmp.t for cmp.lib.r ]------------
+//----[ cmp.t for cmp.lib.r ]------------
 
-confcmp_ = 0 ;Configure Sort Comparator
+.label confcmp_ = 0 //Configure Sort Comparator
 
-  ;Y -> Compare Property Index
-  ;X -> Comparison Type
-  ;A -> Name sub/sort options (dir.s)
+  //Y -> Compare Property Index
+  //X -> Comparison Type
+  //A -> Name sub/sort options (dir.s)
 
-  ;RegPtr <- Comparator
-
+  //RegPtr <- Comparator

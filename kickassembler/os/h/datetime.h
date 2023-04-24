@@ -1,6 +1,6 @@
-toisodt_        = $0003
-frisodt_        = $0006
-toisotm_        = $0009
-frisotm_        = $000c
-gettime_        = $000f
-bcd2int_        = $0012
+.label toisodt_        = $0003
+.label frisodt_        = $0006
+.label toisotm_        = $0009
+.label frisotm_        = $000c
+.label gettime_        = $000f
+.label bcd2int_        = $0012
