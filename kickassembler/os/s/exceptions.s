@@ -1,34 +1,33 @@
 //----[ exceptions.s ]-------------------
 
-regstore = $c8     //A/X/Y +0/+1/+2
+.label regstore = $c8     //A/X/Y +0/+1/+2
 
-backregs = $03bc   //Temp Stashes A/X/Y
-readregs = $03c3   //Reads A/X/Y Back In
+.label backregs = $03bc   //Temp Stashes A/X/Y
+.label readregs = $03c3   //Reads A/X/Y Back In
 
-try_     = $03ca   //Exception Handler
-exception = $03df  //Raise an Exception
+.label try_     = $03ca   //Exception Handler
+.label exception = $03df  //Raise an Exception
 
-excindex = $c7     //Exceptions Tab Index
+.label excindex = $c7     //Exceptions Tab Index
 
-excaddr  = $0e//$0f //Exception Address
+.label excaddr  = $0e//$0f //Exception Address
 
-try      .macro //catch
-         jsr backregs
-         lda #<\1
-         ldx #>\1
-         jsr try_
-         .endm                 //10 bytes
+.macro try(catch) {
+    jsr backregs
+    lda #<catch
+    ldx #>catch
+    jsr try_
+} //10 bytes
 
 //Use exittry if there is no catch block.
 
-exittry  .macro
-         dec excindex           //2 bytes
-         .endm
+.macro exittry() {
+    dec excindex
+} //2 bytes
 
 //Use endtry to skip the catch block.
 
-endtry   .macro //endcatch
-         #exittry
-         jmp \1
-         .endm                  //5 bytes
-
+.macro endtry(endcatch) {
+    :exittry()
+    jmp endcatch
+} //5 bytes

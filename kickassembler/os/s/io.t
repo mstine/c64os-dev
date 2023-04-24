@@ -1,24 +1,18 @@
 //----[ io.t ]---------------------------
 
-stack    = $0100 //$01ff
+.label stack    = $0100 //$01ff
 
-scrbuf   = $0400 //$07ff
+.label scrbuf   = $0400 //$07ff
 
 //RAM mapped
-charset  = $d000 //$d7ff
-colbuf   = $d800 //$dbe7
-scrmem   = $dc00 //$dfe8
-bmapmem  = $e000 //$ff3f
+.label charset  = $d000 //$d7ff
+.label colbuf   = $d800 //$dbe7
+.label scrmem   = $dc00 //$dfe8
+.label bmapmem  = $e000 //$ff3f
 
 //I/O mapped
-vic      = $d000 //$d3ff
-sid      = $d400 //$d7ff
-colmem   = $d800 //$dbe7
-cia1     = $dc00 //$dcff
-cia2     = $dd00 //$ddff
-
-
-
-
-
-
+.label vic      = $d000 //$d3ff
+.label sid      = $d400 //$d7ff
+.label colmem   = $d800 //$dbe7
+.label cia1     = $dc00 //$dcff
+.label cia2     = $dd00 //$ddff

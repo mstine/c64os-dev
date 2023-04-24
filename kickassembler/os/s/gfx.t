@@ -2,7 +2,7 @@
 
 //Header for gfx.lib.r
 
-gfxlibpg = $08ca
+.label gfxlibpg = $08ca
 
 //Init called automatically by loadlib.
 //init    = 0
@@ -10,12 +10,12 @@ gfxlibpg = $08ca
 //Unload called automatically by unldlib.
 //unload  = 3
 
-procgfx_ = 6
+.label procgfx_ = 6
 
 //Called automatically by the IRQ handler
 //c64os_service. Takes no parameters.
 
-confgfx_ = 9
+.label confgfx_ = 9
 //  A -> mcmode
 //  X -> bgmode
 

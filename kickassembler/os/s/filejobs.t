@@ -6,11 +6,11 @@
 
 //FileJob Struct
 
-fj_type  = 0 //4 Job Type Code
-fj_sfref = 4 //1 Source File Ref  (pg)
-fj_sdir  = 5 //1 Source Directory (pg)
-fj_dfref = 6 //1 Dest. File Ref   (pg)
-fj_vcb   = 7 //2 Validation Callback
+.label fj_type  = 0 //4 Job Type Code
+.label fj_sfref = 4 //1 Source File Ref  (pg)
+.label fj_sdir  = 5 //1 Source Directory (pg)
+.label fj_dfref = 6 //1 Dest. File Ref   (pg)
+.label fj_vcb   = 7 //2 Validation Callback
 
 //FileJob size = 9
 

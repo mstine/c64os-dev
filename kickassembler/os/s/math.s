@@ -1,94 +1,93 @@
 //----[ math.s ]---------------------
 
-divisor  = $61//$62
-dividnd  = $63//$64
-remandr  = $65//$66
-divrslt  = $63//$64 -> dividnd
-divrond  = $67
+.label divisor  = $61//$62
+.label dividnd  = $63//$64
+.label remandr  = $65//$66
+.label divrslt  = $63//$64 -> dividnd
+.label divrond  = $67
 
-multplr  = $61//$62
-multcnd  = $63//$64
-product  = $65//$66 $67 $68 //32-bit
+.label multplr  = $61//$62
+.label multcnd  = $63//$64
+.label product  = $65//$66 $67 $68 //32-bit
 
 //16-bit inc/dec, addition and subtract
 
-inc16    .macro        //16-bit increment
-         inc \1                //Lo Byte
+.macro inc16(arg) {    //16-bit increment
+         inc arg                //Lo Byte
          bne done              //Rollover
-         inc \1+1              //Hi Byte
-done
-         .endm
+         inc arg+1              //Hi Byte
+done:
+}
 
-dec16    .macro        //16-bit decrement
-         lda \1            //Test Lo Byte
+.macro dec16(arg) {    //16-bit decrement
+         lda arg           //Test Lo Byte
          bne declo
-         dec \1+1               //Hi Byte
-declo    dec \1                 //Lo Byte
-         .endm
+         dec arg+1              //Hi Byte
+declo:   dec arg                //Lo Byte
+}
 
-add816   .macro //ptr += int8
-         clc
-         lda \1
-         adc #\2
-         sta \1
+.macro add816(ptr, int8) { //ptr += int8
+    clc
+    lda ptr
+    adc #int8
+    sta ptr
 
-         bcc done
-         inc \1+1
-done
-         .endm
+    bcc done
+    inc ptr+1
+done:
+}
 
-sub816   .macro //ptr -= int8
-         sec
-         lda \1
-         sbc #<\2
-         sta \1
+.macro sub816(ptr, int8) { //ptr -= int8
+    sec
+    lda ptr
+    sbc #<int8
+    sta ptr
 
-         bcs done
-         dec \1+1
-done
-         .endm
+    bcs done
+    dec ptr+1
+done:
+}
 
-add16    .macro //ptr += int16
-         clc
-         lda \1
-         adc #<\2
-         sta \1
+.macro add16(ptr, int8) { //ptr += int16
+    clc
+    lda ptr
+    adc #<int8
+    sta ptr
 
-         lda \1+1
-         adc #>\2
-         sta \1+1
-         .endm
+    lda ptr+1
+    adc #>int8
+    sta ptr+1
+}
 
-sub16    .macro //ptr -= int16
-         sec
-         lda \1
-         sbc #<\2
-         sta \1
+.macro sub16(ptr, int16) { //ptr -= int16
+    sec
+    lda ptr
+    sbc #<int16
+    sta ptr
 
-         lda \1+1
-         sbc #>\2
-         sta \1+1
-         .endm
+    lda ptr+1
+    sbc #>int16
+    sta ptr+1
+}
 
-add16ptr .macro //ptr += ptr
-         clc
-         lda \1
-         adc \2
-         sta \1
+.macro add16ptr(ptrA, ptrB) { //ptr += ptr
+    clc
+    lda ptrA
+    adc ptrB
+    sta ptrA
 
-         lda \1+1
-         adc \2+1
-         sta \1+1
-         .endm
+    lda ptrA+1
+    adc ptrB+1
+    sta ptrA+1
+}
 
-sub16ptr .macro //ptr -= ptr
-         sec
-         lda \1
-         sbc \2
-         sta \1
+.macro sub16ptr(ptrA, ptrB) { //ptr -= ptr
+    sec
+    lda ptrA
+    sbc ptrB
+    sta ptrA
 
-         lda \1+1
-         sbc \2+1
-         sta \1+1
-         .endm
-
+    lda ptrA+1
+    sbc ptrB+1
+    sta ptrA+1
+}
