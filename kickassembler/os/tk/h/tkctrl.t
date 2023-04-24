@@ -1,8 +1,9 @@
+#import "classes.h"
 //----[ tkctrl.t ]-----------------------
 
 //----Target/Action--------
 
-settgt_  = tcviewsz
+.label settgt_  = tcviewsz
 //  A -> Action Method
 //  if !actionmethod
 //    RegPtr -> Routine Ptr
@@ -10,15 +11,11 @@ settgt_  = tcviewsz
 //    RegPtr -> null (uses firstkey view)
 //    RegPtr -> Target Object
 
-sendact_ = tcviewsz+3
+.label sendact_ = tcviewsz+3
 
 //----Value Methods--------
 
-setbyt_  = tcviewsz+6   //Int/Char/Byte
-setwrd_  = tcviewsz+9   //Double/16-bit
-setflt_  = tcviewsz+12  //BASIC Float
-setstr_  = tcviewsz+15  //String Pointer
-
-
-
-
+.label setbyt_  = tcviewsz+6   //Int/Char/Byte
+.label setwrd_  = tcviewsz+9   //Double/16-bit
+.label setflt_  = tcviewsz+12  //BASIC Float
+.label setstr_  = tcviewsz+15  //String Pointer

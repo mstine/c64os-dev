@@ -1,24 +1,6 @@
+#import "classes.h"
 //tkscroll.h
-setctnt_ = tcviewsz
-setbar_  = tcviewsz+3
-adjust_  = tcviewsz+6
-setoff_  = tcviewsz+9
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label setctnt_ = tcviewsz
+.label setbar_  = tcviewsz+3
+.label adjust_  = tcviewsz+6
+.label setoff_  = tcviewsz+9

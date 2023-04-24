@@ -1,24 +1,6 @@
+#import "classes.h"
+
 //----[ tkbutton.h ]---------------------
 
-settitle_ = tcctrlsz
-setstate_ = tcctrlsz+3
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label settitle_ = tcctrlsz
+.label setstate_ = tcctrlsz+3

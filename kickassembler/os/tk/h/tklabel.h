@@ -1,24 +1,6 @@
+#import "classes.h"
+
 //----[ tklabel.h ]----------------------
 
-setstrp_ = tcviewsz
+.label setstrp_ = tcviewsz
 // AX -> string pointer
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

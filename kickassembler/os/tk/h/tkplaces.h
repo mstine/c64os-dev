@@ -1,24 +1,11 @@
+#import "classes.h"
 //----[ tkplaces.h ]---------------------
 
-mapdevs_ = tcviewsz
-lditems_ = tcviewsz+3
-addfav_  = tcviewsz+6
-addrcnt_ = tcviewsz+9
+.label mapdevs_ = tcviewsz
+.label lditems_ = tcviewsz+3
+.label addfav_  = tcviewsz+6
+.label addrcnt_ = tcviewsz+9
 
 //---------------------------------------
 
-tcplacessz = tcviewsz+12
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label tcplacessz = tcviewsz+12

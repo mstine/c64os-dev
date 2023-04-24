@@ -1,24 +1,7 @@
+#import "classes.h"
+
 //tkdatepick.h
-dprtcyc_ = tcviewsz
-setdate_ = tcviewsz+3
-getdate_ = tcviewsz+6
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label dprtcyc_ = tcviewsz
+.label setdate_ = tcviewsz+3
+.label getdate_ = tcviewsz+6

@@ -1,24 +1,7 @@
 //----[ tkobj.h ]------------------------
 
-super_   = 0
-size_    = 2
+.label super_   = 0
+.label size_    = 2
 
-init_    = 4
-delete_  = 7
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label init_    = 4
+.label delete_  = 7

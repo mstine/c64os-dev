@@ -1,24 +1,4 @@
+#import "classes.h"
 //----[ tksplit.h ]----------------------
 
-reorient_ = tcviewsz
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label reorient_ = tcviewsz

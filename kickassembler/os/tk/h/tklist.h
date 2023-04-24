@@ -1,24 +1,5 @@
+#import "classes.h"
+
 //----[ tklist.h ]-----------------------
 
-idxchng_ = tcviewsz
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label idxchng_ = tcviewsz

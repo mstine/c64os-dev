@@ -1,24 +1,7 @@
+#import "classes.h"
 //----[ tktabs.h ]-----------------------
 
-gettab_  = tcviewsz
-setdel_  = tcviewsz+3      //Set Delegate
+.label gettab_  = tcviewsz
+.label setdel_  = tcviewsz+3      //Set Delegate
 
-seltab_  = tcviewsz+6      //Select Tab
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label seltab_  = tcviewsz+6      //Select Tab

@@ -1,24 +1,8 @@
+#import "classes.h"
 //----[ tktext.h ]-----------------------
 
-setstrp_ = tcviewsz
+.label setstrp_ = tcviewsz
 //  RegPtr -> pointer to C-String
 
-setstrf_ = setstrp_+3
+.label setstrf_ = setstrp_+3
 //  A -> String draw flags
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

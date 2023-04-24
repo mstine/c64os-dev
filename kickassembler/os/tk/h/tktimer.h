@@ -1,24 +1,5 @@
+#import "classes.h"
 //tktimer.h
-tiset_   = tcviewsz
-titoggle_ = tcviewsz+3
-titick_  = tcviewsz+6
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label tiset_   = tcviewsz
+.label titoggle_ = tcviewsz+3
+.label titick_  = tcviewsz+6

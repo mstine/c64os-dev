@@ -1,24 +1,5 @@
+#import "classes.h"
 //----[ tksbar.h ]-----------------------
 
-reflect_ = tcctrlsz
-recalc_  = tcctrlsz+3
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label reflect_ = tcctrlsz
+.label recalc_  = tcctrlsz+3

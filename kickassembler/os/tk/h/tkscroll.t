@@ -1,9 +1,10 @@
+#import "classes.h"
 //----[ tkscroll.t ]---------------------
 
-setctnt_ = tcviewsz
+.label setctnt_ = tcviewsz
 //  RegPtr -> tkview, scroll content view
 
-setbar_  = tcviewsz+3
+.label setbar_  = tcviewsz+3
 //  X ->  0 = Disable Horz Sbar
 //  X -> !0 = Enable  Horz Sbar
 //  Y ->  0 = Disable Vert Sbar
@@ -11,14 +12,9 @@ setbar_  = tcviewsz+3
 
 //--- Scroll Methods ---
 
-adjust_  = tcviewsz+6
+.label adjust_  = tcviewsz+6
 //  RegPtr -> tksbar object
 
-setoff_  = tcviewsz+9
+.label setoff_  = tcviewsz+9
 //  RegWrd -> new scroll offset
 //  C -> Set = Vertical, Clr = Horizontal
-
-
-
-
-
