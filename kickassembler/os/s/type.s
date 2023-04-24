@@ -1,10 +1,10 @@
-;----[ type.s ]-------------------------
+//----[ type.s ]-------------------------
 
-;C64 OS data types
+//C64 OS data types
 
-;Like MIME types, each C64 OS data type
-;has a type and subtype, 1 byte each.
-;Subtype is unique per type.
+//Like MIME types, each C64 OS data type
+//has a type and subtype, 1 byte each.
+//Subtype is unique per type.
 
 ct_text  = 0
 
@@ -16,7 +16,7 @@ ct_weburl = 4
 ct_date  = 5
 ct_dattim = 6
 ct_fref  = 7
-;ct_???   = 8
+//ct_???   = 8
 ct_number = 9
 ct_tel   = 10
 ct_cal   = 11

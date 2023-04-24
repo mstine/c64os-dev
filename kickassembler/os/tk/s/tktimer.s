@@ -1,4 +1,4 @@
-;----[ tktimer.s ]----------------------
+//----[ tktimer.s ]----------------------
 
 ti_cnting = tkviewsz
 ti_value = tkviewsz+1

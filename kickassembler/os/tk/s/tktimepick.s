@@ -1,4 +1,4 @@
-;----[ tktimepick.s ]-------------------
+//----[ tktimepick.s ]-------------------
 
 tp_24h   = tkviewsz
 tp_hr    = tkviewsz+1

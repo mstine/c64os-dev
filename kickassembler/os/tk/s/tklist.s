@@ -1,6 +1,6 @@
-;----[ tklist.s ]-----------------------
+//----[ tklist.s ]-----------------------
 
-;----Callback Props-----
+//----Callback Props-----
 
 ctntaidx = tkviewsz
 cbk_ctsz = tkviewsz+2

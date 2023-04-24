@@ -1,13 +1,13 @@
-;----[ tkicon.s ]-----------------------
+//----[ tkicon.s ]-----------------------
 
-;----Icon Flags------
+//----Icon Flags------
 
-if_isbut = 1   ;Draw as a button
+if_isbut = 1   //Draw as a button
 
-;----Icon Props-------
+//----Icon Props-------
 
-icflgs   = tkctrlsz   ;Icon Flags
-ictnt    = tkctrlsz+1 ;Content pointer
+icflgs   = tkctrlsz   //Icon Flags
+ictnt    = tkctrlsz+1 //Content pointer
 
 
 

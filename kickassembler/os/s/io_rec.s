@@ -1,16 +1,16 @@
-;----[ io_rec.s ]-----------------------
+//----[ io_rec.s ]-----------------------
 
-detectrec = $6400 ;1 Page Relocatable
+detectrec = $6400 //1 Page Relocatable
 
-reubanks = $0281 ;Detected REU Banks
-appreubk = $0282 ;First App REU Bank
+reubanks = $0281 //Detected REU Banks
+appreubk = $0282 //First App REU Bank
 
-reupage  = $0283 ;Curr. App REU Page -lo
-reubank  = $0284 ;Curr. App REU Bank -hi
+reupage  = $0283 //Curr. App REU Page -lo
+reubank  = $0284 //Curr. App REU Bank -hi
 
-reu_inc  = $01   ;Auto inc REU page/bank
+reu_inc  = $01   //Auto inc REU page/bank
 
-;Ram Expansion Controller
+//Ram Expansion Controller
 
 rec      = $df00
 rec_stat = $00

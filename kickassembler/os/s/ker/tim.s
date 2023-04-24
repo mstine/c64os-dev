@@ -1,24 +1,5 @@
-;----[ tim.s ]--------------------------
+//----[ tim.s ]--------------------------
 
-settim   = $ffdb ;Compatible
-udtim    = $ffea ;Do Not Use
-rdtim    = $ffde ;Compatible
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label settim   = $ffdb //Compatible
+.label udtim    = $ffea //Do Not Use
+.label rdtim    = $ffde //Compatible

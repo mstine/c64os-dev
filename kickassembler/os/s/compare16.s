@@ -1,7 +1,7 @@
-;----[ compare16.s ]--------------------
+//----[ compare16.s ]--------------------
 
-;16-bit Comparisons
-gtewrd   .macro ;num1,word,<label
+//16-bit Comparisons
+gtewrd   .macro //num1,word,<label
          lda \1+1
          cmp #>\2
          bcc \3
@@ -12,7 +12,7 @@ gtewrd   .macro ;num1,word,<label
 gte
          .endm
 
-gte16    .macro ;num1,num2,<label
+gte16    .macro //num1,num2,<label
          lda \1+1
          cmp \2+1
          bcc \3
@@ -23,7 +23,7 @@ gte16    .macro ;num1,num2,<label
 gte
          .endm
 
-eqwrd    .macro ;num1,word,!=label
+eqwrd    .macro //num1,word,!=label
          lda \1
          cmp #<\2
          bne \3
@@ -32,7 +32,7 @@ eqwrd    .macro ;num1,word,!=label
          bne \3
          .endm
 
-eq16     .macro ;num1,num2,!=label
+eq16     .macro //num1,num2,!=label
          lda \1
          cmp \2
          bne \3

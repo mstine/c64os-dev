@@ -1,4 +1,4 @@
-;----[ tksizes.s ]----------------------
+//----[ tksizes.s ]----------------------
 
 tkobjsz  = 2
 
@@ -13,7 +13,7 @@ tkctrlsz = tkviewsz+15
 tkbuttonsz = tkctrlsz+8
 tksbarsz = tkctrlsz+11
 
-;Custom Classes
+//Custom Classes
 
 tkplacessz = tkviewsz+9
 tklistsz = tkviewsz+10

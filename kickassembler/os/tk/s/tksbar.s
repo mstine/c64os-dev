@@ -1,24 +1,24 @@
-;----[ tksbar.s ]-----------------------
+//----[ tksbar.s ]-----------------------
 
-;----Orient Values------
+//----Orient Values------
 
-;These are not defined, just noted here.
-;Remember that "1" is drawn vertically.
+//These are not defined, just noted here.
+//Remember that "1" is drawn vertically.
 
-;Horizontal = 0
-;Vertical   = 1
+//Horizontal = 0
+//Vertical   = 1
 
-;----Configurable Props----
+//----Configurable Props----
 
-orient   = tkctrlsz   ;Orientation
+orient   = tkctrlsz   //Orientation
 
-;----Computed Props--------
+//----Computed Props--------
 
-scrlns   = tkctrlsz+1 ;Scrollable Lines
-nubsz    = tkctrlsz+3 ;Nub Size
-nublns   = tkctrlsz+5 ;Nub Movable Lines
-nuboff   = tkctrlsz+7 ;Nub Offset
-pagesz   = tkctrlsz+9 ;Page Size
+scrlns   = tkctrlsz+1 //Scrollable Lines
+nubsz    = tkctrlsz+3 //Nub Size
+nublns   = tkctrlsz+5 //Nub Movable Lines
+nuboff   = tkctrlsz+7 //Nub Offset
+pagesz   = tkctrlsz+9 //Page Size
 
 
 

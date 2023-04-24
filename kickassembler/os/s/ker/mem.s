@@ -1,24 +1,9 @@
-;----[ mem.s ]--------------------------
+//----[ mem.s ]--------------------------
 
-memtop   = $ff99 ;Do Not Use
-membot   = $ff9c ;Do Not Use
-ramtas   = $ff87 ;Do Not Use
+.label memtop   = $ff99 //Do Not Use
+.label membot   = $ff9c //Do Not Use
+.label ramtas   = $ff87 //Do Not Use
 
-vector   = $ff8d ;Compatible
-restor   = $ff8a ;Do Not Use
-iobase   = $fff3 ;Deprecated
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label vector   = $ff8d //Compatible
+.label restor   = $ff8a //Do Not Use
+.label iobase   = $fff3 //Deprecated

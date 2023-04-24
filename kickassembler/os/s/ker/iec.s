@@ -1,24 +1,13 @@
-;----[ iec.s ]--------------------------
+//----[ iec.s ]--------------------------
 
-talk     = $ffb4 ;Deprecated
-tksa     = $ff96 ;Deprecated
-untlk    = $ffab ;Deprecated
-acptr    = $ffa5 ;Deprecated
+.label talk     = $ffb4 //Deprecated
+.label tksa     = $ff96 //Deprecated
+.label untlk    = $ffab //Deprecated
+.label acptr    = $ffa5 //Deprecated
 
-listen   = $ffb1 ;Deprecated
-second   = $ff93 ;Deprecated
-unlsn    = $ffae ;Deprecated
-ciout    = $ffa8 ;Deprecated
+.label listen   = $ffb1 //Deprecated
+.label second   = $ff93 //Deprecated
+.label unlsn    = $ffae //Deprecated
+.label ciout    = $ffa8 //Deprecated
 
-settmo   = $ffa2 ;Deprecated
-
-
-
-
-
-
-
-
-
-
-
+.label settmo   = $ffa2 //Deprecated

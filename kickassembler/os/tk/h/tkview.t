@@ -1,6 +1,6 @@
-;----[ tkview.t ]-----------------------
+//----[ tkview.t ]-----------------------
 
-;----Responder Methods----
+//----Responder Methods----
 
 setfirst_ = tcobjsz
 
@@ -15,22 +15,22 @@ musdclik_ = tcobjsz+21
 rmusdwn_ = tcobjsz+24
 rmusup_  = tcobjsz+27
 
-;----Node Methods---------
+//----Node Methods---------
 
 addchild_ = tcobjsz+30
 unparent_ = tcobjsz+33
 
-;----Sizing Methods-------
+//----Sizing Methods-------
 
 resize_  = tcobjsz+36
 contsz_  = tcobjsz+39
 
-;----Display Methods------
+//----Display Methods------
 
 update_  = tcobjsz+42
 draw_    = tcobjsz+45
 
-;----Event Methods--------
+//----Event Methods--------
 
 hittest_ = tcobjsz+48
 

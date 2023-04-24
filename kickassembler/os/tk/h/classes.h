@@ -1,6 +1,6 @@
-;----[ classes.h ]----------------------
+//----[ classes.h ]----------------------
 
-;Class Start Offsets      (class size)
+//Class Start Offsets      (class size)
 
 tsobj    = stkt-$21
 
@@ -17,7 +17,7 @@ tsctrl   = tslabel-$01e7
 tsbutton = tsctrl-$02d7
 tssbar   = tsbutton-$0784
 
-;--[ Sizes ]----------------------------
+//--[ Sizes ]----------------------------
 
 tcobjsz  = 10
 tcviewsz = tcobjsz+51
@@ -30,9 +30,9 @@ tcctrlsz = tcviewsz+18
 tcbuttonsz = tcctrlsz+6
 tcsbarsz = tcctrlsz+6
 
-;---------------------------------------
+//---------------------------------------
 
-;C64 OS Toolkit: ClassPtr (ClassById)
+//C64 OS Toolkit: ClassPtr (ClassById)
 
 tkobj    = 0
 

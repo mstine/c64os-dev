@@ -1,8 +1,8 @@
-;----[ tkpbar.s ]-----------------------
+//----[ tkpbar.s ]-----------------------
 
 pathdep  = tkviewsz
 
-;----Callbacks----------
+//----Callbacks----------
 
 pathclik = tkviewsz+1
 

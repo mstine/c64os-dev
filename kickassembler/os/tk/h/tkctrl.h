@@ -1,4 +1,4 @@
-;tkctrl.h
+//tkctrl.h
 settgt_  = tcviewsz
 sendact_ = tcviewsz+3
 setbyt_  = tcviewsz+6

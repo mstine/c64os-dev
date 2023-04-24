@@ -1,7 +1,7 @@
-;----[ tklabel.h ]----------------------
+//----[ tklabel.h ]----------------------
 
 setstrp_ = tcviewsz
-; AX -> string pointer
+// AX -> string pointer
 
 
 

@@ -1,11 +1,11 @@
-;----[ pointer.s ]----------------------
+//----[ pointer.s ]----------------------
 
-rdxy     .macro ;Reads Ptr into X/Y
+rdxy     .macro //Reads Ptr into X/Y
          ldx \1
          ldy \1+1
          .endm
 
-ldxy     .macro ;Loads X/Y with address
+ldxy     .macro //Loads X/Y with address
          ldx #<\1
          ldy #>\1
          .endm
@@ -15,68 +15,68 @@ stxy     .macro
          sty \1+1
          .endm
 
-;---------------------------------------
-;Get and Set RegPtr from Store
+//---------------------------------------
+//Get and Set RegPtr from Store
 
-storeset .macro ;store,index
+storeset .macro //store,index
          stx \1+(\2*2)
          sty \1+(\2*2)+1
          .endm
 
-storeget .macro ;store,index
+storeget .macro //store,index
          ldx \1+(\2*2)
          ldy \1+(\2*2)+1
          .endm
 
-;---------------------------------------
-;Toolkit Helpers
+//---------------------------------------
+//Toolkit Helpers
 
-classmethod .macro ;method_offset
+classmethod .macro //method_offset
          jsr setclass_+stkt
          ldy #\1
          jsr getmethod_+stkt
          .endm
 
-supermethod .macro ;method_offset
+supermethod .macro //method_offset
          jsr setsuper_+stkt
          ldy #\1
          jsr getmethod_+stkt
          .endm
 
-;---------------------------------------
-;Flag Manipulation
+//---------------------------------------
+//Flag Manipulation
 
-setflag  .macro ;ptr,index,flags
+setflag  .macro //ptr,index,flags
          ldy #\2
          lda (\1),y
          ora #\3
          sta (\1),y
          .endm
 
-clrflag  .macro ;ptr,index,flags
+clrflag  .macro //ptr,index,flags
          ldy #\2
          lda (\1),y
          and #\3:$ff
          sta (\1),y
          .endm
 
-togflag  .macro ;ptr,index,flags
+togflag  .macro //ptr,index,flags
          ldy #\2
          lda (\1),y
          eor #\3
          sta (\1),y
          .endm
 
-;---------------------------------------
-;Setters and Getters
+//---------------------------------------
+//Setters and Getters
 
-setobj8  .macro ;ptr,offset,int8
+setobj8  .macro //ptr,offset,int8
          ldy #\2
          lda #\3
          sta (\1),y
          .endm
 
-setobj16 .macro ;ptr,offset,int16
+setobj16 .macro //ptr,offset,int16
          ldy #\2
          lda #<\3
          sta (\1),y
@@ -85,7 +85,7 @@ setobj16 .macro ;ptr,offset,int16
          sta (\1),y
          .endm
 
-setobjptr .macro ;ptr,offset,ptr
+setobjptr .macro //ptr,offset,ptr
          ldy #\2
          lda \3
          sta (\1),y
@@ -94,7 +94,7 @@ setobjptr .macro ;ptr,offset,ptr
          sta (\1),y
          .endm
 
-setobjxy .macro ;ptr,offset,(RegWrd)
+setobjxy .macro //ptr,offset,(RegWrd)
          tya
          ldy #\2+1
          sta (\1),y
@@ -103,8 +103,8 @@ setobjxy .macro ;ptr,offset,(RegWrd)
          sta (\1),y
          .endm
 
-rdobj16  .macro ;ptr,offset
-         ;RegPtr <- property
+rdobj16  .macro //ptr,offset
+         //RegPtr <- property
          ldy #\2
          lda (\1),y
          tax
@@ -113,68 +113,68 @@ rdobj16  .macro ;ptr,offset
          tay
          .endm
 
-getobj16 .macro ;ptr,offset,to
-         ;A <- property hi byte
-         ldy #\2+1  ;offset hi byte
+getobj16 .macro //ptr,offset,to
+         //A <- property hi byte
+         ldy #\2+1  //offset hi byte
          lda (\1),y
          pha
-         dey        ;offset lo byte
+         dey        //offset lo byte
          lda (\1),y
-         sta \3     ;Save lo byte
+         sta \3     //Save lo byte
          pla
-         sta \3+1   ;Save hi byte
+         sta \3+1   //Save hi byte
          .endm
 
-;---------------------------------------
+//---------------------------------------
 
 pushxy   .macro
-         tya ;Hi
+         tya //Hi
          pha
-         txa ;Lo
+         txa //Lo
          pha
          .endm
 
 pullxy   .macro
          pla
-         tax ;Lo
+         tax //Lo
          pla
-         tay ;Hi
+         tay //Hi
          .endm
 
-push16   .macro ;word to put on stack
-         lda #>\1 ;Hi
+push16   .macro //word to put on stack
+         lda #>\1 //Hi
          pha
-         lda #<\1 ;Lo
-         pha
-         .endm
-
-pushptr  .macro ;ptr to put on stack
-         lda \1+1 ;Hi
-         pha
-         lda \1   ;Lo
+         lda #<\1 //Lo
          pha
          .endm
 
-pull16   .macro ;ptr to pull from stack
+pushptr  .macro //ptr to put on stack
+         lda \1+1 //Hi
+         pha
+         lda \1   //Lo
+         pha
+         .endm
+
+pull16   .macro //ptr to pull from stack
          pla
-         sta \1   ;Lo
+         sta \1   //Lo
          pla
-         sta \1+1 ;Hi
+         sta \1+1 //Hi
          .endm
 
-;---------------------------------------
+//---------------------------------------
 
-copy16   .macro ;word,dest
+copy16   .macro //word,dest
          lda #<\1
-         sta \2   ;1st: lo byte
+         sta \2   //1st: lo byte
          lda #>\1
-         sta \2+1 ;2nd: hi byte
+         sta \2+1 //2nd: hi byte
          .endm
 
-copyptr  .macro ;ptr,dest
+copyptr  .macro //ptr,dest
          lda \1
-         sta \2   ;1st: lo byte
+         sta \2   //1st: lo byte
          lda \1+1
-         sta \2+1 ;2nd: hi byte
+         sta \2+1 //2nd: hi byte
          .endm
 

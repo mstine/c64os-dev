@@ -1,13 +1,13 @@
-;----[ tkview.s ]-----------------------
+//----[ tkview.s ]-----------------------
 
-colcoord = $61 ; $62 ;multplr
-rowcoord = $63 ; $64 ;multcnd
+colcoord = $61 // $62 //multplr
+rowcoord = $63 // $64 //multcnd
 
-;----Responder Props----
+//----Responder Props----
 
 nextresp = tkobjsz
 
-;----Node Props---------
+//----Node Props---------
 
 parent   = tkobjsz+2
 child    = tkobjsz+4
@@ -15,7 +15,7 @@ sibling  = tkobjsz+6
 
 tag      = tkobjsz+8
 
-;----Sizing Props-------
+//----Sizing Props-------
 
 offtop   = tkobjsz+9
 offbot   = tkobjsz+11
@@ -29,18 +29,18 @@ width    = tkobjsz+23
 
 rsmask   = tkobjsz+25
 
-;----Scrolling Props----
+//----Scrolling Props----
 
 s_top    = tkobjsz+26
 s_left   = tkobjsz+28
 
-;----Drawing Props------
+//----Drawing Props------
 
 dflags   = tkobjsz+30
 mflags   = tkobjsz+31
 bcolor   = tkobjsz+32
 
-;----Hit Props----------
+//----Hit Props----------
 
 hitrow   = tkobjsz+33
 hitcol   = tkobjsz+35

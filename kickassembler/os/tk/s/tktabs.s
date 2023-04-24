@@ -1,23 +1,23 @@
-;----[ tktabs.s ]-----------------------
+//----[ tktabs.s ]-----------------------
 
-;tktabs delegate struct
+//tktabs delegate struct
 tabstr   = 0
 willblur = 2
 willfoc  = 4
 didblur  = 6
 didfoc   = 8
 
-;----Selection Props----
+//----Selection Props----
 
-curtab   = tkviewsz    ; 1
-tabsz    = tkviewsz+1  ;10
-tabcnt   = tkviewsz+11 ; 1
+curtab   = tkviewsz    // 1
+tabsz    = tkviewsz+1  //10
+tabcnt   = tkviewsz+11 // 1
 
-hltab    = tkviewsz+12 ; 1
+hltab    = tkviewsz+12 // 1
 
-;----Control Props----
+//----Control Props----
 
-delegate = tkviewsz+13 ; 2
+delegate = tkviewsz+13 // 2
 
 
 

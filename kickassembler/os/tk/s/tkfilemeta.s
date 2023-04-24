@@ -1,4 +1,4 @@
-;----[ tkfilemeta.s ]-------------------
+//----[ tkfilemeta.s ]-------------------
 
 fm_dtype = tkviewsz
 fm_stype = tkviewsz+1

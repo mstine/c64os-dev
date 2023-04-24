@@ -1,10 +1,10 @@
-;----[ inttohex.s ]---------------------
+//----[ inttohex.s ]---------------------
 
-;Deprecated. Use tohex in Math Module.
+//Deprecated. Use tohex in Math Module.
 
-tohex    ;.A -> An int 0+255
-         ;.X <- Lo Nybble Hex
-         ;.Y <- Hi Nybble Hex
+tohex    //.A -> An int 0+255
+         //.X <- Lo Nybble Hex
+         //.Y <- Hi Nybble Hex
          .block
 
          pha

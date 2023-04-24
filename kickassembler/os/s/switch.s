@@ -1,8 +1,8 @@
 
-switch   .macro ;case count
-         ;A -> switch code
-         ;A is preserved if not found.
-         stx tab-2           ;Stash .X
+switch   .macro //case count
+         //A -> switch code
+         //A is preserved if not found.
+         stx tab-2           //Stash .X
          ldx #\1
 
 loop     dex
@@ -10,7 +10,7 @@ loop     dex
          cmp tab,x
          bne loop
 
-         sta tab-4           ;Stash .A
+         sta tab-4           //Stash .A
 
          txa
          asl a
@@ -20,9 +20,9 @@ loop     dex
          pha
          lda tab+\1,x
          pha
-         lda #$ff            ;Restore .A
-         ldx #$ff            ;Restore .X
-         rts               ;Jump To .RTA
+         lda #$ff            //Restore .A
+         ldx #$ff            //Restore .X
+         rts               //Jump To .RTA
 tab
          .endm
 

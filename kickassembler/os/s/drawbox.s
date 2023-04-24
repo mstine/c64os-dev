@@ -1,4 +1,4 @@
-;----[ drawbox.s ]----------------------
+//----[ drawbox.s ]----------------------
 
 drawbox  .macro
 xa       = 0
@@ -8,26 +8,26 @@ yb       = 3
 fillchar = 4
 fillcolr = 5
 
-width    = xb ;Overwrites
-hight    = yb ;Overwrites
-;---------------------------------------
+width    = xb //Overwrites
+hight    = yb //Overwrites
+//---------------------------------------
 
          lda par+xb
          cmp par+xa
          bcs skipswx
 
-         ;Swap xa/xb
+         //Swap xa/xb
          ldy par+xa
          sta par+xa
          sty par+xb
 skipswx
-         ;Get width from deltaX
+         //Get width from deltaX
          sec
          lda par+xb
-         sbc par+xa    ;OriginX
-         sta par+width ;Width
+         sbc par+xa    //OriginX
+         sta par+width //Width
 
-         ;Inset draw cursor X
+         //Inset draw cursor X
          clc
          lda d_ctx+d_origin
          adc par+xa
@@ -36,7 +36,7 @@ skipswx
          adc #0
          sta d_dcrsr+1
 
-         ;Inset colr cursor X
+         //Inset colr cursor X
          clc
          lda d_ctx+d_coloro
          adc par+xa
@@ -45,22 +45,22 @@ skipswx
          adc #0
          sta d_ccrsr+1
 
-;---------------------------------------
+//---------------------------------------
 
          lda par+yb
          cmp par+ya
          bcs skipswy
 
-         ;Swap ya/yb
+         //Swap ya/yb
          ldy par+ya
          sta par+ya
          sty par+yb
 skipswy
-         ;Get height from deltaY
+         //Get height from deltaY
          sec
          lda par+yb
-         sbc par+ya    ;OriginY
-         sta par+hight ;Height
+         sbc par+ya    //OriginY
+         sta par+hight //Height
 
          ldy par+ya
          beq *+8
@@ -76,9 +76,9 @@ skipswy
          ldx par+hight
 
 drawrow  ldy par+width
-getchar  lda #$ff              ;Self-Mod
+getchar  lda #$ff              //Self-Mod
          sta (d_dcrsr),y
-getcolr  lda #$ff              ;Self-Mod
+getcolr  lda #$ff              //Self-Mod
          sta (d_ccrsr),y
          dey
          bpl getchar
@@ -89,7 +89,7 @@ getcolr  lda #$ff              ;Self-Mod
 
          jmp par+6
 
-incrow   ;Increment Draw Row
+incrow   //Increment Draw Row
          clc
          lda d_dcrsr
          adc d_ctx+d_bwidth
@@ -97,7 +97,7 @@ incrow   ;Increment Draw Row
          bcc *+4
          inc d_dcrsr+1
 
-         ;Increment Colr Row
+         //Increment Colr Row
          clc
          lda d_ccrsr
          adc d_ctx+d_bwidth
@@ -107,7 +107,7 @@ incrow   ;Increment Draw Row
 
          rts
 
-par      ;Parameters (6 bytes)
+par      //Parameters (6 bytes)
          .endm
 
 

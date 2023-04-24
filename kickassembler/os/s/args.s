@@ -1,24 +1,16 @@
-;----[ args.s ]-------------------------
+//----[ args.s ]-------------------------
 
-argptr   = $45 ;$46
+.label argptr   = $45 //$46
 
-arg8     .macro ;index,addr
-         ldy #\1+1
+.macro arg8(index, addr) {
+         ldy #index+1
          lda (argptr),y
-         sta \2
-         .endm
+         sta addr
+}
 
-arg16    .macro ;index,addr
-         #arg8 \1,\2
-         iny
-         lda (argptr),y
-         sta \2+1
-         .endm
-
-
-
-
-
-
-
-
+.macro arg16(index, addr) {
+    arg8(index, addr)
+    iny
+    lda (argptr),y
+    sta addr+1
+}

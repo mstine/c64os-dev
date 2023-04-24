@@ -1,24 +1,10 @@
-;----[ io.s ]---------------------------
+//----[ io.s ]---------------------------
 
-chkin    = $ffc6
-chkout   = $ffc9
-clrchn   = $ffcc
-clall    = $ffe7
-readst   = $ffb7
+.label chkin    = $ffc6
+.label chkout   = $ffc9
+.label clrchn   = $ffcc
+.label clall    = $ffe7
+.label readst   = $ffb7
 
-chrin    = $ffcf
-chrout   = $ffd2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.label chrin    = $ffcf
+.label chrout   = $ffd2

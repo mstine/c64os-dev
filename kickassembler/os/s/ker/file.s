@@ -1,26 +1,25 @@
-;----[ file.s ]-------------------------
+//----[ file.s ]-------------------------
 
-setlfs   = $ffba ;Compatible
-setnam   = $ffbd ;Compatible
-load     = $ffd5 ;Compatible
+.label setlfs   = $ffba //Compatible
+.label setnam   = $ffbd //Compatible
+.label load     = $ffd5 //Compatible
 
-open     = $ffc0 ;Compatible
-close    = $ffc3 ;Compatible
-save     = $ffd8 ;Compatible
+.label open     = $ffc0 //Compatible
+.label close    = $ffc3 //Compatible
+.label save     = $ffd8 //Compatible
 
-;--- File Constants ---
+//--- File Constants ---
 
-;LOAD Modes
-loadop   = $00
-verifyop = $01
+//LOAD Modes
+.label loadop   = $00
+.label verifyop = $01
 
-;SETLFS before a LOAD
-loadrel  = $00 ;Relocate, ignore header
-loaddef  = $01 ;Load to header address
+//SETLFS before a LOAD
+.label loadrel  = $00 //Relocate, ignore header
+.label loaddef  = $01 //Load to header address
 
-;SETLFS before an OPEN
-cmdload  = $00
-cmdsave  = $01
-;I/O     = $02 through $0e
-cmdchan  = $0f
-
+//SETLFS before an OPEN
+.label cmdload  = $00
+.label cmdsave  = $01
+//I/O     = $02 through $0e
+.label cmdchan  = $0f

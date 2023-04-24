@@ -1,13 +1,13 @@
-;----[ tktext.s ]-----------------------
+//----[ tktext.s ]-----------------------
 
-;----String Flags-------
+//----String Flags-------
 
 f_wrap   = %00000001
-f_sel    = %00000010 ;Selectable
-f_asc    = %01000000 ;Asc2Pet
-f_rev    = %10000000 ;Reverse Draw
+f_sel    = %00000010 //Selectable
+f_asc    = %01000000 //Asc2Pet
+f_rev    = %10000000 //Reverse Draw
 
-;----Text Props---------
+//----Text Props---------
 
 tstrptr  = tkviewsz
 

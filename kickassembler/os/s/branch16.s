@@ -1,72 +1,73 @@
-;----[ branch16.s ]---------------------
+//----[ branch16.s ]---------------------
 
-;16-bit Short Branches
+//16-bit Short Branches
 
-b_ifnull .macro ;ptr,branchLabel
-         lda \1
-         ora \1+1
-         beq \2
-         .endm
-b_ifset  .macro ;ptr,branchLabel
-         lda \1
-         ora \1+1
-         bne \2
-         .endm
+.macro b_ifnull(ptr, branchLabel) {
+    lda ptr
+    ora ptr+1
+    beq branchLabel
+}
 
-;16-bit Long Branches
+.macro b_ifset(ptr, branchLabel) {
+    lda ptr
+    ora ptr+1
+    bne branchLabel
+}
 
-bl_ifnull .macro ;ptr,branchLabel
-         lda \1
-         ora \1+1
-         bne *+3
-         jmp \2
-         .endm
-bl_ifset .macro ;ptr,branchLabel
-         lda \1
-         ora \1+1
-         beq *+3
-         jmp \2
-         .endm
+//16-bit Long Branches
 
-;Long Branches
+.macro bl_ifnull(ptr, branchLabel) {
+    lda ptr
+    ora ptr+1
+    bne *+3
+    jmp branchLabel
+}
 
-bcc_     .macro
-         bcs *+5
-         jmp \1
-         .endm
+.macro bl_ifset(ptr, branchLabel) {
+    lda ptr
+    ora ptr+1
+    beq *+3
+    jmp branchLabel
+}
 
-bcs_     .macro
-         bcc *+5
-         jmp \1
-         .endm
+//Long Branches
 
-beq_     .macro
-         bne *+5
-         jmp \1
-         .endm
+.macro bcc_(branchLabel) {
+    bcs *+5
+    jmp branchLabel
+}
 
-bne_     .macro
-         beq *+5
-         jmp \1
-         .endm
+.macro bcs_(branchLabel) {
+    bcc *+5
+    jmp branchLabel
+}
 
-bmi_     .macro
-         bpl *+5
-         jmp \1
-         .endm
+.macro beq_(branchLabel) {
+    bne *+5
+    jmp branchLabel
+}
 
-bpl_     .macro
-         bmi *+5
-         jmp \1
-         .endm
+.macro bne_(branchLabel) {
+    beq *+5
+    jmp branchLabel
+}
 
-bvc_     .macro
-         bvs *+5
-         jmp \1
-         .endm
+.macro bmi_(branchLabel) {
+    bpl *+5
+    jmp branchLabel
+}
 
-bvs_     .macro
-         bvc *+5
-         jmp \1
-         .endm
+.macro bpl_(branchLabel) {
+    bmi *+5
+    jmp branchLabel
+}
 
+.macro bvc_(branchLabel) {
+    bvs *+5
+    jmp branchLabel
+}
+
+.macro bvs_(branchLabel) {
+    bvc *+5
+    jmp branchLabel
+}

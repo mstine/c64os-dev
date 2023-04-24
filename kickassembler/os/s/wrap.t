@@ -1,9 +1,9 @@
-;----[ wrap.t ]-------------------------
+//----[ wrap.t ]-------------------------
 
-;Contants for wrap.lib
+//Contants for wrap.lib
 
-width_   = $59 ;$5a
-height_  = $5b ;$5c
+width_   = $59 //$5a
+height_  = $5b //$5c
 
 
 

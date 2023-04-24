@@ -1,5 +1,5 @@
-;---------------------------------------
-; 3x3 Characters - Missing App Icon
+//---------------------------------------
+// 3x3 Characters - Missing App Icon
 
 missing  .byte $3f,$40,$80,$83
          .byte $84,$88,$88,$88

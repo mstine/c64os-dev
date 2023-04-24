@@ -1,4 +1,4 @@
-;tkview.h
+//tkview.h
 setfirst_ = tcobjsz
 dokeyeqv_ = tcobjsz+3
 keypress_ = tcobjsz+6
