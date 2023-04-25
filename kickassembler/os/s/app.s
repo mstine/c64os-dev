@@ -1,3 +1,4 @@
+#importonce 
 .label appbase         = $0900
 .label utilbase        = $e000
 .label initextern      = $02fc
