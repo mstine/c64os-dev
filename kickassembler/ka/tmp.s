@@ -1,4 +1,4 @@
-.pseudocommand null string {
+.pseudocommand nullStr string {
    .text string
    .byte 0 
 }
