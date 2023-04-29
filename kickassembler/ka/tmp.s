@@ -13,6 +13,13 @@
    .byte 0 
 }
 
+.assert "makes a null-terminated string",{
+   nullStr("Hello World!")
+},{
+   .text "Hello World!"
+   .byte 0
+}
+
 /*
  * rta
  * 
