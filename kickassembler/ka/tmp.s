@@ -32,15 +32,15 @@
 .macro rta(wordList){
    .for(var i = 0; i < wordList.size(); i++) {
       .var nextWord = wordList.get(i)
-      .eval nextWord--
-      .byte <nextWord,>nextWord
+      .byte <nextWord-1,>nextWord-1
    }
 }
 
-.assert "rta generates decremented words in hi/lo byte order",{
-   rta(List().add($fce2,$d012))
+.assert "rta generates decremented words in lo/hi byte order",{
+   rta(List().add($fce2,$d012,$0969))
 },
 {
    .byte $e1,$fc
    .byte $11,$d0
+   .byte $68,$09
 }

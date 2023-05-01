@@ -30,7 +30,7 @@ tab:
 .assert "switch with 1",{
     :switch(1)
     .text "!"
-    :rta(List().add($d012))
+    :rta(List().add($0969))
 },
 {
          stx tab-2
@@ -52,7 +52,7 @@ loop:    dex
          rts             
 tab:
     .text "!"
-    .byte $11,$d0
+    .byte $68,$09
 }
 
 .assert "switch with 2",{
